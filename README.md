@@ -1,29 +1,33 @@
-# nac
+# Noughts And Crosses (NAC)
+Felhasznált technológiák: Vue.js, Vue CLI, Vuetify
 
-## Project setup
+A PWA megvalósítás érdekében használtam a Vue.js keretrendszert, 
+a Vue CLI és Vuetify segítségével pedig könnyedén fel lehet építeni az alkalmazást olyan elemekkel, amelyek a legtöbb alkalmazáshoz szükségesek.
+
+Az alkalmazás telepítéséhez Node.js -re is szükség van a local gépen. (version 18.16)
+https://nodejs.org/
+
+## Telepítés
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Elindítás (Compiles and hot-reloads for development)
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+```
+Bejelentkezés:
+username: User
+password: User123
+```
+
+### Production verzió lenegerálása (Compiles and minifies for production)
 ```
 npm run build
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Egyéb információk
+Az alkalmazásban használt ikon készlet forrása:
+https://pictogrammers.com/library/mdi/

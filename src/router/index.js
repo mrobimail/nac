@@ -1,22 +1,47 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import LoginPage from '../views/LoginPage.vue';
+import LogoutPage from '../views/LogoutPage.vue';
 
 Vue.use(VueRouter);
 
+const checkAuthentication = (to, from, next) => {
+  if (!Vue.prototype.$session.get('loginStatus')) {
+    next('/login');
+  } else {
+    next();
+  }
+};
+
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView,
+    path: '/login',
+    name: 'Login',
+    component: LoginPage,
+    meta: {
+      layout: 'OutsideLayout',
+    },
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    path: '/logout',
+    name: 'Logout',
+    component: LogoutPage,
+    meta: {
+      layout: 'OutsideLayout',
+    },
+  },
+  {
+    path: '/',
+    name: 'NacPage',
+    component: () => import(/* webpackChunkName: "NacPage" */ '../views/NacPage.vue'),
+    meta: {
+      layout: 'InsideLayout',
+    },
+    beforeEnter: checkAuthentication,
+  },
+  {
+    path: '*',
+    redirect: '/',
   },
 ];
 

@@ -1,32 +1,32 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div id="app" :class="layout">
+    <component v-bind:is="layout"></component>
   </div>
 </template>
 
+<script>
+import OutsideLayout from './views/layout/OutsideLayout.vue';
+import InsideLayout from './views/layout/InsideLayout.vue';
+
+export default {
+  components: {
+    OutsideLayout,
+    InsideLayout,
+  },
+  created() {
+    this.$session.start();
+  },
+  computed: {
+    layout() {
+      return this.$route.meta.layout;
+    },
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+  @import "assets/css/app.scss";
+  @import "assets/css/password.css";
+  @import "assets/css/roboto.css";
+  @import "assets/css/materialdesignicons.min.css";
 </style>

@@ -81,11 +81,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    # - id: Build-Vue
-    #   uses: xRealNeon/VuePagesAction@1.0.1
-    #   with:
-    #     username: 'mrobimail'
-    #     reponame: 'nac'
-    #     token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+    - id: Build-Vue
+      uses: xRealNeon/VuePagesAction@1.0.1
+      with:
+        username: 'mrobimail'
+        reponame: 'nac'
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
     - run: npm install
     - run: npm run build --if-present

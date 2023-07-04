@@ -38,7 +38,7 @@
 #         env:
 #           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-name: Node.js CI
+name: Ez az
 
 on:
   push:

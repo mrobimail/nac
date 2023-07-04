@@ -1,4 +1,4 @@
-# Noughts And Crosses (NAC)
+# Noughts And Crosses (NAC) - test 2
 Felhasznált technológiák: Vue.js, Vue CLI, Vuetify
 
 A PWA megvalósítás érdekében használtam a Vue.js keretrendszert, 

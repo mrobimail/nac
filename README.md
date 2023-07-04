@@ -1,4 +1,4 @@
-# Noughts And Crosses (NAC) v2
+# Noughts And Crosses (NAC) v3
 Felhasznált technológiák: Vue.js, Vue CLI, Vuetify
 
 A PWA megvalósítás érdekében használtam a Vue.js keretrendszert, 
@@ -23,7 +23,7 @@ username: User
 password: User123
 ```
 
-### Production verzió legenrálása (Compiles and minifies for production)
+### Production verzió legenerálása (Compiles and minifies for production)
 ```
 npm run build
 ```

@@ -7,7 +7,7 @@
           <v-card class="elevation-12">
             <v-toolbar color="primary" dark flat>
               <v-spacer></v-spacer>
-              <v-toolbar-title>Noughts And Crosses (NAC)</v-toolbar-title>
+              <v-toolbar-title>Noughts And Crosses (NAC) v2</v-toolbar-title>
               <v-spacer></v-spacer>
             </v-toolbar>
             <v-card-text>

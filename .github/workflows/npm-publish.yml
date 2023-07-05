@@ -64,55 +64,55 @@
 #       - run: npm install
 #       - run: npm run build --if-present
 
-# name: Build Vue
-# on: [push]
-# jobs:
-#   build_vue:
-#     runs-on: ubuntu-latest
-#     name: Build Vue
+name: Build Vue
+on: [push]
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
 
-#     strategy:
-#       matrix:
-#         node-version: [14.x, 16.x, 18.x, 20.x]
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x, 20.x]
 
-#     steps:
-#     - uses: actions/checkout@v3
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#     # - id: Build-Vue
-#     #   uses: xRealNeon/VuePagesAction@1.0.1
-#     #   with:
-#     #     username: 'mrobimail'
-#     #     reponame: 'nac'
-#     #     token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-#     - run: npm install
-#     # - run: npm run build --if-present
-#     # - run: git config user.name "mrobimail" && git config user.email "mrobimail@gmail.com"
-#     - run: npm run deploy
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    # - id: Build-Vue
+    #   uses: xRealNeon/VuePagesAction@1.0.1
+    #   with:
+    #     username: 'mrobimail'
+    #     reponame: 'nac'
+    #     token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+    - run: npm install
+    # - run: npm run build --if-present
+    # - run: git config user.name "mrobimail" && git config user.email "mrobimail@gmail.com"
+    - run: npm run gh-pages-deploy
 
-name: Deploy to github pages
-  on:
-    push:
-      branches:
-        - master
-  jobs:
-    gh-pages-deploy:
-      name: Deploying to gh-pages
-      runs-on: ubuntu-latest
-      steps:
-        - name: Setup Node.js for use with actions
-          uses: actions/setup-node@v2
-          with:
-            version:  12.x
-        - name: Checkout branch
-          uses: actions/checkout@v2
+# name: Deploy to github pages
+#   on:
+#     push:
+#       branches:
+#         - master
+#   jobs:
+#     gh-pages-deploy:
+#       name: Deploying to gh-pages
+#       runs-on: ubuntu-latest
+#       steps:
+#         - name: Setup Node.js for use with actions
+#           uses: actions/setup-node@v2
+#           with:
+#             version:  12.x
+#         - name: Checkout branch
+#           uses: actions/checkout@v2
 
-        - name: Clean install dependencies
-          run: npm install
+#         - name: Clean install dependencies
+#           run: npm install
 
-        - name: Run deploy script
-          run: |
-            git config user.name "mrobimail" && git config user.email "mrobimail@gmail.com"
-            npm run gh-pages-deploy
+#         - name: Run deploy script
+#           run: |
+#             git config user.name "mrobimail" && git config user.email "mrobimail@gmail.com"
+#             npm run gh-pages-deploy

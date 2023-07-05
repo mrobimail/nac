@@ -78,7 +78,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: "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"
     # - name: Use Node.js ${{ matrix.node-version }}
     - uses: actions/setup-node@v3
       with:

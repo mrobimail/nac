@@ -78,7 +78,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        token: "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"
+        token: "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"
     # - name: Use Node.js ${{ matrix.node-version }}
     - uses: actions/setup-node@v3
       with:

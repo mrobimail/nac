@@ -95,8 +95,8 @@ jobs:
     # - run: git config user.name "mrobimail" && git config user.email "mrobimail@gmail.com"
     - run: git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
     # - run: npm run deploy
-    # - run: npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
-    - run: npm run deploy -- -u "mrobimail <mrobimail@gmail.com>"
+    - run: npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+    # - run: npm run deploy -- -u "mrobimail <mrobimail@gmail.com>"
     # env:
     #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

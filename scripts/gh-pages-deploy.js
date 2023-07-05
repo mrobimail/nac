@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
-// const execa = require("execa");
-// const fs = require("fs");
+const execa = require("execa");
+const fs = require("fs");
 // import { fs } from 'fs';
-import { execa } from 'execa';
-import * as fs from 'fs';
+// import { execa } from 'execa';
+// import * as fs from 'fs';
 
 (async () => {
   try {

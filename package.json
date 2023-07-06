@@ -1,16 +1,15 @@
 {
-  "homepage": "https://mrobimail.github.io/nac",
   "name": "nac",
   "version": "0.1.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "gh-pages-deploy": "node scripts/gh-pages-deploy.mjs",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist",
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.js",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -35,14 +34,18 @@
     "@vue/eslint-config-airbnb": "^6.0.0",
     "@vue/test-utils": "^1.1.3",
     "chai": "^4.2.0",
+    "chalk": "^4.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-vue": "^8.0.3",
     "eslint-plugin-vuejs-accessibility": "^1.1.0",
     "execa": "^7.1.1",
     "gh-pages": "^5.0.0",
+    "node-emoji": "^1.10.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "vue-cli-plugin-gh-pages-auto-deploy": "~0.5.0",
     "vue-template-compiler": "^2.6.14"
-  }
+  },
+  "homepage": "https://mrobimail.github.io/nac"
 }
